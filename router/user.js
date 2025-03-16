@@ -4,7 +4,7 @@ const client = require("../db");
 const router = express.Router();
 
 // GET API to fetch user details
-router.get("/users", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const result = await client.query('SELECT * FROM public."user"');
     res.status(200).json(result.rows);
@@ -13,7 +13,7 @@ router.get("/users", async (req, res) => {
   }
 });
 
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { firstName, lastName } = req.body;
     console.log(firstName, lastName);

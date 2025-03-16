@@ -6,7 +6,7 @@ const db = require("./db");
 // Middleware to parse JSON requests
 app.use(express.json());
 // Import user router
-app.use("/", user);
+app.use("/users", user);
 app.get("/", (req, res) => {
   res.end("Server started successfully!");
 });
